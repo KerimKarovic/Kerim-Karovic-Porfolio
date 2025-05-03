@@ -10,6 +10,11 @@ body {
   color: #444444;
   font-family: 'Space Mono', monospace;
 }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 
 .hero {
@@ -211,12 +216,15 @@ body {
 
 .experience__title {
   font-family: 'Monoton', cursive;
-  font-size: 48px;
+  font-size: clamp(28px, 8vw, 48px); /* makes it responsive */
   line-height: 1.2em;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 80px;
   color: #EBEBEB;
+  word-break: break-word;
+  hyphens: auto;
+  padding: 0 10px;
 }
 
 .experience__grid {
@@ -582,5 +590,89 @@ body {
   font-weight: bold;
   color: #EBEBEB;
   cursor: pointer;
+}
+
+/* === Responsive Layout for Tablets (<=1024px) === */
+@media (max-width: 1024px) {
+  .hero__buttons {
+    gap: 96px;
+    left: 64px;
+    right: 64px;
+  }
+
+  .about__container {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .experience__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .projects__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact__buttons {
+    flex-direction: column;
+  }
+}
+
+/* === Responsive Layout for Mobile Devices (<=768px) === */
+@media (max-width: 768px) {
+  .hero__content {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .hero__image {
+    order: 1;
+    position: static;
+    margin-bottom: 16px;
+  }
+
+  .subtitle,
+  .year {
+    order: 3;
+    display: block;
+    position: static;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .hero__buttons {
+    order: 4;
+    flex-direction: column;
+    position: static;
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    padding: 64px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__btn {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .hero__buttons {
+    gap: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .name {
+    font-size: clamp(3rem, 12vw, 6rem); /* much smaller for phones */
+  }
 }
 
