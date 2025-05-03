@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Kerim Karovic{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero__overlay">
+    <!-- Ellipses -->
+    <div class="ellipse ellipse--1"></div>
+    <div class="ellipse ellipse--2"></div>
+    <div class="ellipse ellipse--3"></div>
+  </div>
+
+  <div class="hero__buttons">
+    <a href="#about" class="hero__btn">About Me</a>
+    <a href="#experience" class="hero__btn">Experience</a>
+    <a href="#projects" class="hero__btn">My Projects</a>
+    <a href="#contact" class="hero__btn">Contacts</a>
+  </div>
+  
+
+  <!-- Main content -->
+  <div class="hero__content">
+    <p class="subtitle">Kerim Karovic's Portfolio</p>
+    <p class="year">2 0 2 5</p>
+    <h1 class="name">KERIM</h1>
+    <div class="hero__image">
+      <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Kerim Karovic">
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="about__container">
+    <div class="about__left">
+      <h2 class="about__title">About The<br>Wizard</h2>
+    </div>
+    <div class="about__right">
+      <p class="about__text">
+        Hey there! I am Kerim Karovic, your friendly full-stack web and software developer. Fueled with the fire of creativity and driven by a deep passion for technology, I aim to deliver innovative and user-friendly web solutions. Simplifying complexities? That’s my game! Whether it’s crafting responsive websites or cracking the AI code, I’m all about pushing the boundaries.
+      </p>
+    </div>
+  </div>
+</section>
+<section id="experience" class="experience">
+  <div class="experience__overlay">
+    <!-- Decorative Objects -->
+    <div class="experience__eclipse"></div>
+    <div class="experience__star"></div>
+  </div>
+
+  <h2 class="experience__title">My Path Less Travelled</h2>
+
+  <div class="experience__grid">
+    <div class="experience__item">
+      <h3>The IT Academy</h3>
+      <p>Web Development Program, Sarajevo – wrapped up in 2022. Practice-focused stint covering front-end and back-end development.</p>
+    </div>
+    <div class="experience__item">
+      <h3>Specializations & Certifications</h3>
+      <p>Prompt Engineering from Vanderbilt University & DeepLearning.AI, Java Programming & Software Engineering from Duke University & UC San Diego.</p>
+    </div>
+    <div class="experience__item">
+      <h3>Programming Foundations</h3>
+      <p>Gained deep insights into frontend technologies like JavaScript, HTML, & CSS. Built modern, responsive interfaces.</p>
+    </div>
+    <div class="experience__item">
+      <h3>Python Dev Courses</h3>
+      <p>Explored logic expression through clean Python code. Discovered power of object-oriented principles and efficient debugging.</p>
+    </div>
+    <div class="experience__item">
+      <h3>Freelance Developer</h3>
+      <p>Since January 2022, delivering modern and responsive web and software solutions. Handling a variety of projects remote.</p>
+    </div>
+    <div class="experience__item">
+      <h3>Full-Time Dev Job</h3>
+      <p>Currently delighting users in Germany with my full-time web development magic. Building using modern tech stacks.</p>
+    </div>
+  </div>
+</section>
+<section id="projects" class="projects">
+  <div class="projects__container">
+
+    <div class="project__card">
+      <img src="{{ url_for('static', filename='images/mangaReaderImage.png') }}" alt="Automated Manga Reader">
+      <h3 class="project__title">Automated Manga Reader</h3>
+      <p class="project__desc">Fast, scalable, accessibility-friendly reading</p>
+    </div>
+
+    <div class="project__card">
+      <img src="{{ url_for('static', filename='images/PorfolioImage.png') }}" alt="Developer Portfolio Website">
+      <h3 class="project__title">Developer Portfolio Website</h3>
+      <p class="project__desc">Showcasing my coding prowess</p>
+    </div>
+
+    <div class="project__card">
+      <img src="{{ url_for('static', filename='images/UnderwayImage.png') }}" alt="Projects Underway">
+      <h3 class="project__title">Projects Underway</h3>
+      <p class="project__desc">More code magic coming!</p>
+    </div>
+
+  </div>
+</section>
+<section id="contact" class="contact">
+  <h2 class="contact__title">Let’s Connect!</h2>
+  <p class="contact__text">
+    Got a project brewing in your head or just looking to chat? <br>
+    Can’t wait to hear from you and create more digital magic together! <br>
+    Hit the button and let’s kickstart our journey!
+  </p>
+  <div class="contact__buttons">
+    <a href="mailto:kerim@example.com" class="contact__btn light">Contact Me</a>
+    <a href="https://github.com/KerimKarovic" target="_blank" class="contact__btn dark">View GitHub</a>
+  </div>
+  <p class="contact__footer">© 2025 Kerim Karovic</p>
+</section>
+
+{% endblock %}
