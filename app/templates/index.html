@@ -3,6 +3,21 @@
 {% block title %}Home - Kerim Karovic{% endblock %}
 
 {% block content %}
+<!-- Contact Popup -->
+<div id="contactPopup" class="contact-popup">
+  <div class="contact-popup__content">
+    <span class="contact-popup__close">&times;</span>
+    <h3 class="contact-popup__title">Let’s Connect!</h3>
+    <ul class="contact-popup__list">
+      <li><strong>Mobile (DE):</strong> +49 15566088651</li>
+      <li><strong>Mobile (BIH):</strong> +387 62008871</li>
+      <li><strong>WhatsApp:</strong> +387 62008871</li>
+      <li><strong>E-mail:</strong> <a href="mailto:kerim.karovic3@gmail.com">kerim.karovic3@gmail.com</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kerim-karovic-8835b42a7/" target="_blank">kerim-karovic</a></li>
+    </ul>
+  </div>
+</div>
+
 <section class="hero">
   <div class="hero__overlay">
     <!-- Ellipses -->
@@ -16,6 +31,8 @@
     <a href="#experience" class="hero__btn">Experience</a>
     <a href="#projects" class="hero__btn">My Projects</a>
     <a href="#contact" class="hero__btn">Contacts</a>
+    
+
   </div>
   
 
@@ -77,6 +94,12 @@
       <p>Currently delighting users in Germany with my full-time web development magic. Building using modern tech stacks.</p>
     </div>
   </div>
+  <div class="experience__download">
+    <a href="{{ url_for('static', filename='files/Kerim_Karovic_Resume_.pdf') }}" class="download-btn" download>
+      Download CV
+    </a>
+  </div>
+  
 </section>
 <section id="projects" class="projects">
   <div class="projects__container">
@@ -85,19 +108,29 @@
       <img src="{{ url_for('static', filename='images/mangaReaderImage.png') }}" alt="Automated Manga Reader">
       <h3 class="project__title">Automated Manga Reader</h3>
       <p class="project__desc">Fast, scalable, accessibility-friendly reading</p>
+      <div class="project__hover">
+        <p>Visit project GitHub for detailed description.</p>
+        <a href="https://github.com/KerimKarovic/Automated-Manga-Reader-" target="_blank">GitHub Link</a>
+      </div>
     </div>
-
+    
     <div class="project__card">
-      <img src="{{ url_for('static', filename='images/PorfolioImage.png') }}" alt="Developer Portfolio Website">
+      <img src="{{ url_for('static', filename='images/PorfolioImage.png') }}" alt="Portfolio Website">
       <h3 class="project__title">Developer Portfolio Website</h3>
       <p class="project__desc">Showcasing my coding prowess</p>
+      <div class="project__hover">
+        <p>Visit project GitHub for detailed description.</p>
+        <a href="https://github.com/KerimKarovic/Kerim-Karovic-Porfolio" target="_blank">GitHub Link</a>
+      </div>
     </div>
-
+    
     <div class="project__card">
       <img src="{{ url_for('static', filename='images/UnderwayImage.png') }}" alt="Projects Underway">
       <h3 class="project__title">Projects Underway</h3>
       <p class="project__desc">More code magic coming!</p>
+      <!-- No hover link here -->
     </div>
+    
 
   </div>
 </section>
@@ -109,10 +142,24 @@
     Hit the button and let’s kickstart our journey!
   </p>
   <div class="contact__buttons">
-    <a href="mailto:kerim@example.com" class="contact__btn light">Contact Me</a>
+    <a href="#" class="contact__btn light" id="openContactPopup">Contact Me</a>
+
     <a href="https://github.com/KerimKarovic" target="_blank" class="contact__btn dark">View GitHub</a>
   </div>
   <p class="contact__footer">© 2025 Kerim Karovic</p>
+  <!-- Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal__content">
+    <span class="modal__close">&times;</span>
+    <h3>Let’s Get in Touch</h3>
+    <p><strong>E-mail:</strong> kerim.karovic3@gmail.com</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kerim-karovic-8835b42a7/" target="_blank">kerim-karovic</a></p>
+    <p><strong>Mobile (DE):</strong> +49 15566088651</p>
+    <p><strong>Mobile (BIH):</strong> +387 62008871</p>
+    <p><strong>WhatsApp:</strong> +387 62008871</p>
+  </div>
+</div>
+
 </section>
 
 {% endblock %}
